@@ -1,10 +1,9 @@
 #include <stdio.h>
-#include <conio.h>
 #include <string.h>
 
 int main() {
     FILE *fp;
-    char in, file_name[40], choice;
+    char ch, file_name[40], choice;
     
     printf("\n\tTEXT-EDITOR");
     printf("\n\n\tEnter File Name : ");
@@ -19,8 +18,8 @@ int main() {
         
         printf("\n\n\n\tREAD MODE\n\n");
         
-        while((in = getc(fp)) != EOF) {
-            printf("%c",in);
+        while((ch = getc(fp)) != EOF) {
+            printf("%c",ch);
         }
         
         fclose(fp);
@@ -29,8 +28,8 @@ int main() {
         
         printf("\n\n\n\tWRITE MODE (For saving File Press Ctrl+Z)\n\n");
         
-        while((in=getchar()) != EOF) {
-            putc(in,fp);
+        while((ch=getchar()) != EOF) {
+            putc(ch,fp);
         }
         
         fclose(fp);
@@ -39,14 +38,13 @@ int main() {
         
         printf("\n\n\n\tADD MODE (For saving File Press Ctrl+Z)\n\n");
         
-        while((in=getchar()) != EOF) {
-            putc(in,fp);
+        while((ch=getchar()) != EOF) {
+            putc(ch,fp);
         }
         
         fclose(fp);
     }
     
-    getch();
     
     return 0;
 }
